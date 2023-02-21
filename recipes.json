@@ -1,0 +1,18 @@
+[
+    {
+        "title":"Pancakes",
+        "short_description":"Text1",
+        "long_description":"Text1",
+        "image":"pancakes.png",
+        "ingredients":["sugar", "ice","peanuts","lime"],
+        "category":"breakfast"
+    },
+    {
+        "title":"Test2",
+        "short_description":"Text1",
+        "long_description":"Text1",
+        "image":"pancakes.png",
+        "ingredients":[],
+        "category":"dinner"
+    }
+]
