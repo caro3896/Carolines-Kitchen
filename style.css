@@ -62,10 +62,6 @@ nav{
     z-index: 2;
 }
 
-nav button {
-
-}
-
 /* LOGIN MODAL */
 
 #login_modal{
@@ -86,6 +82,7 @@ nav button {
     padding: 20px;
     width: 80%;
     padding: 3rem 4rem;
+    max-width: 800px;
 }
 
 #modal_wrapper #close_modal {
@@ -117,6 +114,10 @@ nav button {
 
 #modal_wrapper form span {
     text-decoration: underline;
+}
+
+.hidden{
+    display: none;
 }
 
 /* FRONT PAGE */
