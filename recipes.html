@@ -15,23 +15,35 @@
         <button>Login</button>
     </nav>
 
-    <div id="login_modal">
+    <!-- <div id="login_modal">
         <form action=""></form>
-    </div>
+    </div> -->
 
-    <main>
+    <main id="recipes_page">
         <section id="filtering">
-
+            <button class="filter" data-filter="All">All</button>
+            <button class="filter" data-filter="Dinner">Dinner</button>
+            <button class="filter" data-filter="Breakfast">Breakfast</button>
+            <button class="filter" data-filter="Lunch">Lunch</button>
+            <button class="filter" data-filter="Snacks">Snacks</button>
+            <button class="filter" data-filter="Desserts">Desserts</button>
         </section>
+
+        <h2 id="recipes_category">All recipes</h2>
 
         <section id="recipes_wrapper">
             <template>
                 <article>
-                    <h2 class="title"></h2>
                     <img class="recipe_img" src="" alt="">
-                    <p class="text"></p>
-                    <p class="text2"></p>
-                    <ul class="ingredients"></ul>
+                    <div class="article_bottom">
+                        <div class="article_top">
+                            <span class="category"></span>
+                            <span class="time"></span>
+                        </div>
+                        <h2 class="title"></h2>
+                        <p class="text"></p>
+                        <button class="like"></button>
+                    </div>
                 </article>
             </template>
         </section>
