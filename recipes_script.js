@@ -47,7 +47,7 @@ function showRecipes(){
             clone.querySelector(".title").textContent = recipe.title;
             clone.querySelector(".text").textContent = recipe.short_description;
             
-            clone.querySelector("article").addEventListener("click", () => showRecipe(recipe));
+            clone.querySelector(".recipe_template").addEventListener("click", () => showRecipe(recipe));
 
         container.appendChild(clone);
         }

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Recipes</title>
 </head>
 <body>
     <nav>
@@ -30,10 +30,44 @@
         </div>
     </div>
 
-    <article>
-        <h1 id="recipe_title"></h1>
-        <p id="recipe_text"></p>
-    </article>
+    <main id="recipe_page">
+        <aside>
+            <img id="recipe_img" src="" alt="">
+            <h1 id="recipe_title"></h1>
+        </aside>
+        <section>
+            <div id="intro">
+                <h2 id="recipe_title2"></h2>
+                <p id="recipe_text"></p>
+            </div>
+            <div id="recipe_box">
+                <div id="info">
+                    <div>
+                        <p>Serves</p>
+                        <h4 id="servings"></h4>
+                    </div>
+                    <div>
+                        <p>Prep time</p>
+                        <h4 id="prep"></h4>
+                    </div>
+                    <div>
+                        <p>Cook time</p>
+                        <h4 id="cook"></h4>
+                    </div>
+                </div>
+                <div id="steps">
+                    <div>
+                        <h3>Ingredients</h3>
+                        <ul id="ingredients"></ul>
+                    </div>
+                    <div>
+                        <h3>Instructions</h3>
+                        <ol id="instructions"></ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 </body>
 <script src="singe_view_script.js"></script>
 <script src="script.js"></script>
