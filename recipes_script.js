@@ -18,6 +18,8 @@ function start(){
 // Setting the filter after the chosen filter button
 function selectFilter(){
     filter = this.dataset.filter;
+    document.querySelector(".active").classList.remove("active");
+    this.classList.add('active');
     console.log(filter);
     showRecipes();
     document.querySelector("#recipes_category").textContent = filter;
@@ -51,15 +53,6 @@ function showRecipes(){
 
         container.appendChild(clone);
         }
-        
-        // clone.querySelector(".text2").textContent = recipe.long_description;
-
-        // recipe.ingredients.forEach(ingredient =>{
-        //     console.log("getting ingredients");
-        //     clone.querySelector(".ingredients").innerHTML += "<li>" + ingredient + "</li>"
-        // });
-
-        
     });
 }
 
