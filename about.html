@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Recipe</title>
+    <title>About</title>
 </head>
 <body>
     <nav>
@@ -13,8 +13,8 @@
             <a id="logo" href="index.html"><img src="images/logo.svg" alt="CK in a circle - the logo of the site"></a>
         </div>
         <div id="nav_right">
-            <a class="focus" href="recipes.html">Recipes</a>
-            <a href="about.html">About</a>
+            <a href="recipes.html">Recipes</a>
+            <a class="focus" href="about.html">About</a>
             <a id="saved" href="saved.html"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16"> <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/> </svg> </a>
             <button id="login_btn">Login</button>
         </div>
@@ -34,46 +34,5 @@
             </form>
         </div>
     </div>
-
-    <main id="recipe_page">
-        <aside>
-            <img id="recipe_img" src="" alt="">
-            <h1 id="recipe_title"></h1>
-        </aside>
-        <section>
-            <div id="intro">
-                <h2 id="recipe_title2"></h2>
-                <p id="recipe_text"></p>
-            </div>
-            <div id="recipe_box">
-                <div id="info">
-                    <div>
-                        <p>Serves</p>
-                        <h4 id="servings"></h4>
-                    </div>
-                    <div>
-                        <p>Prep time</p>
-                        <h4 id="prep"></h4>
-                    </div>
-                    <div>
-                        <p>Cook time</p>
-                        <h4 id="cook"></h4>
-                    </div>
-                </div>
-                <div id="steps">
-                    <div>
-                        <h3>Ingredients</h3>
-                        <ul id="ingredients"></ul>
-                    </div>
-                    <div>
-                        <h3>Instructions</h3>
-                        <ol id="instructions"></ol>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
 </body>
-<script src="single_view_script.js"></script>
-<script src="script.js"></script>
 </html>
