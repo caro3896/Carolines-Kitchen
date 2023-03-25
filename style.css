@@ -191,12 +191,12 @@ nav{
 }
 
 /* RECIPES (ALL) */
-#recipes_page{
+#recipes_page, #saved_page{
     margin: 0 4rem;
     padding-top: 5rem;
 }
 
-#recipes_page h1, #recipes_page h2{
+#recipes_page h1, #recipes_page h2, #saved_page h1, #saved_page h2{
     text-align: center;
     line-height: 4rem;
 }
@@ -237,6 +237,10 @@ nav{
     /* float: right; */
 }
 
+.like_button{
+    background-color: #FFAE00;
+}
+
 /* FILTERING */
 
 #filtering {
@@ -262,6 +266,10 @@ nav{
     display: flex;
     /* flex-direction: row; */
     align-items: flex-end;
+}
+
+#recipe_page section {
+    width: 100%;
 }
 
 #recipe_img {

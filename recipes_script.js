@@ -36,6 +36,7 @@ async function getData() {
 const container = document.querySelector("#recipes_wrapper");
 const template = document.querySelector("template");
 
+// Looping trough the data and appending it to the template
 function showRecipes(){
     console.log("showing data");   
     container.textContent = "";
@@ -49,16 +50,22 @@ function showRecipes(){
             clone.querySelector(".title").textContent = recipe.title;
             clone.querySelector(".text").textContent = recipe.short_description;
             
-            clone.querySelector(".recipe_template").addEventListener("click", () => showRecipe(recipe));
+            clone.querySelector(".recipe_wrapper").addEventListener("click", () => showRecipe(recipe));
+            clone.querySelector(".like_button").addEventListener("click", () => saveRecipe(recipe));
 
         container.appendChild(clone);
         }
     });
 }
 
-    function showRecipe(recipe) {
-        console.log(recipe.title + " was clicked")
-        location.href = `recipe.html?id=${recipe.title}`;
-    }
-// }
+function showRecipe(recipe) {
+    console.log(recipe.title + " was clicked")
+    location.href = `recipe.html?id=${recipe.title}`;
+}
 
+let savedRecipes = []
+// function to add object to localstorage
+function saveRecipe(recipe){
+    savedRecipes.push(recipe)
+    window.localStorage.setItem("Saved recipes", JSON.stringify(savedRecipes));
+}
