@@ -3,8 +3,14 @@ window.addEventListener("DOMContentLoaded", start);
 let recipes;
 let filter = "All";
 const jsonData = "recipes.json";
+let savedRecipes = [];
+let saved = localStorage.getItem("Saved");
 
 function start(){
+    if(saved){
+        savedRecipes = JSON.parse(saved);
+    }
+    
     document.querySelector("#login_btn").addEventListener("click", () =>{
         console.log("modal")
         document.querySelector("#login_modal").classList.toggle("hidden");
@@ -57,9 +63,16 @@ function showRecipes(){
             clone.querySelector(".time").textContent = recipe.overall_time;
             clone.querySelector(".title").textContent = recipe.title;
             clone.querySelector(".text").textContent = recipe.short_description;
-            
+            if(savedRecipes.includes(recipe.title)){
+                clone.querySelector(".like_button svg").style.fill = "#FFAE00";
+                clone.querySelector(".like_button svg").style.stroke = "#FFAE00";
+            }
+            else {
+                clone.querySelector(".like_button svg").style.fill = "transparent";
+                clone.querySelector(".like_button svg").style.stroke = "#002937";
+            }
             clone.querySelector(".recipe_wrapper").addEventListener("click", () => showRecipe(recipe));
-            clone.querySelector(".like_button").addEventListener("click", () => saveRecipe(recipe));
+            clone.querySelector(".like_button").addEventListener("click", (e) => saveRecipe(e, recipe));
 
         container.appendChild(clone);
         }
@@ -72,18 +85,22 @@ function showRecipe(recipe) {
 }
 
 // Inspiration from: https://stackoverflow.com/questions/20125181/storing-arrays-to-localstorage-every-click-of-a-button
-let savedRecipes = [];
-function saveRecipe(recipe){
-    let saved = localStorage.getItem("Saved");
-    if(saved){
-        savedRecipes = JSON.parse(saved);
-    }
+
+function saveRecipe(e, recipe){
     if(savedRecipes.includes(recipe.title)){
-            // TO DO: Remove from array
+            // TO DO: Remove from array and localstorage - found: https://love2dev.com/blog/javascript-remove-from-array/#remove-from-array-splice-value
+            for (let i = 0; i <savedRecipes.length; i++){
+                if (savedRecipes[i] === recipe.title){
+                    console.log("Remove: " + recipe.title);
+                    savedRecipes.splice(i,1);
+                    i--;
+                }
+            }
     }
     else {
-        //TO DO: Change heart to color
+        e.target.style.fill = "#FFAE00";
         savedRecipes.push(recipe.title);
     }
     localStorage.setItem("Saved", JSON.stringify(savedRecipes));
+    showRecipes();
 }

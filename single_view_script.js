@@ -55,5 +55,3 @@ function showRecipes(recipes){
         }
     });
 }
-
-// TO DO: history back
