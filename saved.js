@@ -1,31 +1,40 @@
 window.addEventListener("DOMContentLoaded", start);
 
+const jsonData = "recipes.json";
 
 function start(){
-    if (window.localStorage.getItem("Saved recipes")== null){
-        document.querySelector("#saved_intro").textContent = "You have no saved recipes yet!"
-    }
-    else {
-        let saved = [];
-        saved.push(window.localStorage.getItem("Saved recipes"));
-        
-        // container.textContent = "";
-        console.log(saved);
+    getData();
+}
 
-    // saved.forEach(recipe => {
-    //     if (filter == recipe.category || filter == "All"){
-    //         const clone = template.cloneNode(true).content;
-    //         clone.querySelector(".recipe_img").src = `./images/` + recipe.image;
-    //         clone.querySelector(".category").textContent = recipe.category;
-    //         clone.querySelector(".time").textContent = recipe.overall_time;
-    //         clone.querySelector(".title").textContent = recipe.title;
-    //         clone.querySelector(".text").textContent = recipe.short_description;
+async function getData() {
+    console.log("getting data");
+    const result = await fetch(jsonData);
+    recipes = await result.json();
+    showRecipes();
+}
+
+const container = document.querySelector("#recipes_wrapper");
+const template = document.querySelector("template");
+
+function showRecipes(){
+    console.log("showing data");   
+    container.textContent = "";
+
+    recipes.forEach(recipe => {
+        console.log(recipe);
+        if (recipe.saved === true){
+            console.log(recipe);
+            const clone = template.cloneNode(true).content;
+            clone.querySelector(".recipe_img").src = `./images/` + recipe.image;
+            clone.querySelector(".category").textContent = recipe.category;
+            clone.querySelector(".time").textContent = recipe.overall_time;
+            clone.querySelector(".title").textContent = recipe.title;
+            clone.querySelector(".text").textContent = recipe.short_description;
             
-    //         clone.querySelector(".recipe_wrapper").addEventListener("click", () => showRecipe(recipe));
-    //         clone.querySelector(".like_button").addEventListener("click", () => saveRecipe(recipe));
+            clone.querySelector(".recipe_wrapper").addEventListener("click", () => showRecipe(recipe));
+            clone.querySelector(".like_button").addEventListener("click", () => saveRecipe(recipe));
 
-    //     container.appendChild(clone);
-    //     }
-    // });
-    }
+        container.appendChild(clone);
+        }
+    });
 }

@@ -6,6 +6,20 @@ function start(){
     document.querySelector("title").textContent = id;
     const jsonData = "recipes.json";
     getRecipes(jsonData);
+
+    document.querySelector("#login_btn").addEventListener("click", () =>{
+        console.log("modal")
+        document.querySelector("#login_modal").classList.toggle("hidden");
+    })
+
+    document.querySelector("#close_modal").addEventListener("click", () =>{
+        console.log("modal")
+        document.querySelector("#login_modal").classList.toggle("hidden");
+    })
+
+    document.querySelector("#back").addEventListener("click", () => {
+        history.back();
+    })
 }
 
 async function getRecipes(jsonData) {
@@ -42,4 +56,4 @@ function showRecipes(recipes){
     });
 }
 
-
+// TO DO: history back

@@ -19,6 +19,7 @@ function start(){
     document.querySelectorAll(".filter").forEach(button => {
         button.addEventListener("click", selectFilter)
     });
+
     getData();
 }
 
@@ -70,3 +71,19 @@ function showRecipe(recipe) {
     location.href = `recipe.html?id=${recipe.title}`;
 }
 
+// Inspiration from: https://stackoverflow.com/questions/20125181/storing-arrays-to-localstorage-every-click-of-a-button
+let savedRecipes = [];
+function saveRecipe(recipe){
+    let saved = localStorage.getItem("Saved");
+    if(saved){
+        savedRecipes = JSON.parse(saved);
+    }
+    if(savedRecipes.includes(recipe.title)){
+            // TO DO: Remove from array
+    }
+    else {
+        //TO DO: Change heart to color
+        savedRecipes.push(recipe.title);
+    }
+    localStorage.setItem("Saved", JSON.stringify(savedRecipes));
+}
