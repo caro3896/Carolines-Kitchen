@@ -245,7 +245,7 @@ nav{
     width: 20px;
     height: 20px;
     fill: transparent;
-    stroke: var(--main-bg-color);
+    /* stroke: var(--main-bg-color); */
 }
 
 .like_button{
@@ -298,7 +298,11 @@ nav{
 }
 
 #intro h2 {
-    margin: 1rem 0; 
+    display: inline;
+}
+
+#intro #recipe_text {
+    margin-top: 1rem;
 }
 
 #recipe_title {
@@ -306,6 +310,7 @@ nav{
     bottom: 80px;
     left: 20px;
     color: var(--secondary-color);
+    text-shadow: 4px 4px 5px black;
 }
 
 #back {
