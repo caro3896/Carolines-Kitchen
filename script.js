@@ -39,7 +39,6 @@ function start(){
 }
 
 // Setting the filter after the chosen filter button
-// Inspiration from previous project - https://github.com/caro3896/hacked_hogwarts_student_list/blob/main/script.js
 function selectFilter(){
     // Set filter to be the chosen one
     filter = this.dataset.filter;
