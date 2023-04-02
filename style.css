@@ -190,8 +190,17 @@ nav{
     border-radius: 50%;
 }
 
+#recipes_overview figure {
+    line-height: 1.5rem;
+    font-size: 1.1rem;
+}
+
 #recipes_overview figcaption{
     text-align: center;
+}
+
+#recipes_overview figure:hover figcaption{
+    border-bottom: 2px solid var(--secondary-color);
 }
 
 /* RECIPES (ALL) */

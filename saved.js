@@ -12,15 +12,15 @@ function start(){
     // Call function to get data
     getData();
 
-    // Show the login modal
+    // Show the Login modal
     document.querySelector("#login_btn").addEventListener("click", () =>{
         console.log("modal")
-        document.querySelector("#login_modal").classList.add("hidden");
+        document.querySelector("#login_modal").classList.remove("hidden");
     })
     // Close the login modal
     document.querySelector("#close_modal").addEventListener("click", () =>{
         console.log("modal")
-        document.querySelector("#login_modal").classList.remove("hidden");
+        document.querySelector("#login_modal").classList.add("hidden");
     })
 }
 

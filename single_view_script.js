@@ -1,5 +1,6 @@
 window.addEventListener("DOMContentLoaded", start);
 // Get the URL containing the id(name) of the recipe
+// Inspiration from - https://medium.com/@cyberbotmachines/how-to-pass-value-from-one-html-page-to-another-using-javascript-3c9ab62df4d
 const urlParams = new URLSearchParams(window.location.search);
 const id = urlParams.get("id");
 
@@ -19,12 +20,12 @@ function start(){
     // Show the login modal
     document.querySelector("#login_btn").addEventListener("click", () =>{
         console.log("modal")
-        document.querySelector("#login_modal").classList.add("hidden");
+        document.querySelector("#login_modal").classList.remove("hidden");
     })
     // Close the login modal
     document.querySelector("#close_modal").addEventListener("click", () =>{
         console.log("modal")
-        document.querySelector("#login_modal").classList.remove("hidden");
+        document.querySelector("#login_modal").classList.add("hidden");
     })
     // Go back in history when button is clicked
     document.querySelector("#back").addEventListener("click", () => {
