@@ -197,6 +197,7 @@ nav{
 
 #recipes_overview figcaption{
     text-align: center;
+    border-bottom: 2px solid var(--main-bg-color);
 }
 
 #recipes_overview figure:hover figcaption{
