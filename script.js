@@ -114,7 +114,7 @@ function showRecipe(recipe) {
 function saveRecipe(e, recipe){
     // If the recipe is already saved, remove it and change the color of the button
     if(savedRecipes.includes(recipe.title)){
-            // TO DO: Remove from array - found: https://love2dev.com/blog/javascript-remove-from-array/#remove-from-array-splice-value
+            // TO DO: Remove from array - inspiration from: https://love2dev.com/blog/javascript-remove-from-array/#remove-from-array-splice-value
             for (let i = 0; i <savedRecipes.length; i++){
                 // Loop trough the saved recipes and find the one that matches the name clicked
                 if (savedRecipes[i] === recipe.title){
