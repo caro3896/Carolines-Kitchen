@@ -76,8 +76,8 @@ function showRecipe(recipe) {
 // Inspiration from: https://stackoverflow.com/questions/20125181/storing-arrays-to-localstorage-every-click-of-a-button
 function removeRecipe(e, recipe){
     if(savedRecipes.includes(recipe.title)){
-        console.log("This was in the array", recipe.title);
-        // TO DO: Remove from array and localstorage - found: https://love2dev.com/blog/javascript-remove-from-array/#remove-from-array-splice-value
+        console.log(recipe.title)," was in the array";
+        // TO DO: Remove from array and localstorage - inspiration from: https://love2dev.com/blog/javascript-remove-from-array/#remove-from-array-splice-value
         for (let i = 0; i <savedRecipes.length; i++){
             // Loop trough the saved recipes and find the one that matches the name clicked
             if (savedRecipes[i] === recipe.title){
