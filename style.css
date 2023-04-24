@@ -157,8 +157,9 @@ nav{
     display: none;
 }
 
-/* FRONT PAGE */
-#front_page{
+/* FRONT PAGE + ABOUT PAGE*/
+#front_page,
+#about{
     display: flex;
     height: 100vh;
 }
@@ -169,11 +170,18 @@ nav{
     object-fit: cover;
 }
 
-#front_page_text_wrapper{
+#about img {
+    object-fit: cover;
+    width: 90vw;
+}
+
+#front_page_text_wrapper,
+#about_text_wrapper{
     margin: 50vh 3rem;
 }
 
-#front_page_text_wrapper p{
+#front_page_text_wrapper p,
+#about_text_wrapper p{
     margin: 1rem 0;
 }
 
@@ -366,3 +374,19 @@ nav{
 #steps h3 {
     margin: 1rem 0;
 }
+
+/* ABOUT PAGE */
+/* #about {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    height: 100vh;
+}
+
+#about img {
+    height: 100vh;
+}
+
+#about div {
+    position: relative;
+    bottom: 0;
+} */
